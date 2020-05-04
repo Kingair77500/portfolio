@@ -3,60 +3,84 @@ import { rem } from "polished";
 import styled from "styled-components";
 import { ReactComponent as GithubSVG } from "../Images/Github.svg";
 import { ReactComponent as LinkedinSVG } from "../Images/Linkedin.svg";
+import { Link } from "react-scroll";
 
 const ContactContainer = styled.footer`
   padding: ${rem(40)} ${rem(40)};
   background-color: #f5f5f5;
+
+  @media (max-width: 500px) {
+    padding: ${rem(40)} ${rem(10)};
+  }
 `;
 
 const ContactGeneral = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 1px solid black;
+  border-top: 1px solid #e0e0e0;
+  padding-top: ${rem(20)};
+
+  @media (max-width: 500px) {
+    flex-wrap: wrap;
+  }
+`;
+
+const FooterNav = styled.div`
+  @media (max-width: 500px) {
+    width: 30%;
+  }
 `;
 
 const ContactDirect = styled.p`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ContactInfo = styled.span`
-    margin-top: ${rem(10)};
-    padding-left: ${rem(10)};
+  margin-top: ${rem(10)};
+  padding-left: ${rem(10)};
 `;
 
 const ContactSocial = styled.div`
-    align-self: flex-end;
+  align-self: flex-end;
+
+  @media (max-width: 500px) {
+    margin-top: ${rem(15)};
+  }
 `;
 
 const Linkedin = styled(LinkedinSVG)`
-    margin-right: ${rem(10)};
+  margin-right: ${rem(10)};
 `;
 
 const Contact = () => {
   return (
-    <ContactContainer>
+    <ContactContainer id="Contact">
       <ContactGeneral>
+        <FooterNav>
+          <p>Qui je suis?</p>
+          <p>Compétences</p>
+          <p>Expériences</p>
+          <p>Projets</p>
+        </FooterNav>
         <div>
-            <p>Qui je suis?</p>
-            <p>Compétences</p>
-            <p>Expériences</p>
-            <p>Projets</p>
-        </div>
-        <div>
-            <ContactDirect>
-                <span>Email:</span>
-                <ContactInfo>nicolas.dubois.pro@laposte.net</ContactInfo>
-            </ContactDirect>
-            <ContactDirect>
-                <span>Numéro:</span>
-                <ContactInfo>0763204089</ContactInfo>
-            </ContactDirect>
+          <ContactDirect>
+            <span>Email:</span>
+            <ContactInfo>nicolas.dubois.pro@laposte.net</ContactInfo>
+          </ContactDirect>
+          <ContactDirect>
+            <span>Numéro:</span>
+            <ContactInfo>0763204089</ContactInfo>
+          </ContactDirect>
         </div>
         <ContactSocial>
+          <a href="https://www.linkedin.com/in/nicolas-dubois-82b6a411a/">
             <Linkedin />
+          </a>
+          <a href="https://github.com/Kingair77500">
             <GithubSVG />
+          </a>
         </ContactSocial>
       </ContactGeneral>
     </ContactContainer>

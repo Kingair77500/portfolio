@@ -24,3 +24,11 @@ export const MY_SKILL = [
     name: "CSS"
   }
 ];
+
+export const HEADER_ITEMS = [
+  "Qui je suis?",
+  "Compétences",
+  "Expériences",
+  "Projets",
+  "Contact"
+];

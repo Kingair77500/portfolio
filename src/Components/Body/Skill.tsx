@@ -166,7 +166,7 @@ const Skill = () => {
   };
 
   return (
-    <SkillComponent>
+    <SkillComponent id="Compétences">
       <TitleSkill>Compétences :</TitleSkill>
       <ListSkill>
         {SkillData.map((item, index) => {

@@ -87,7 +87,7 @@ const ObjectifOrSkill = styled.h3`
 
 const Projet = () => {
   return (
-    <ProjetComponent>
+    <ProjetComponent id="Projets">
       <ProjetContainer>
         <TitleComponent>Projet :</TitleComponent>
         <AllProjetComponent>
