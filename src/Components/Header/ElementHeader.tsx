@@ -14,6 +14,10 @@ type PropsHeaderComponent = {
   navBar: boolean;
 };
 
+const TextNav = styled.span`
+  align-self: center;
+`;
+
 const ElementUl = styled.li`
   display: flex;
   height: 100%;
@@ -33,6 +37,13 @@ const ElementUl = styled.li`
     transform: ${(props: PropsHeaderComponent) =>
       props.navBar ? "none" : "translateY(-5px)"};
     padding: 0 ${rem(30)};
+    &:hover ${TextNav} {
+      border-bottom: inherit;
+    }
+  }
+
+  &:hover ${TextNav} {
+    border-bottom: 1px solid white;
   }
 `;
 
@@ -49,10 +60,6 @@ const LinkPers = styled(Link)`
     border-top: ${(props: PropsLink) =>
       props.borderBooleen ? "0.5px solid #9da6a9" : "none"};
   }
-`;
-
-const TextNav = styled.span`
-  align-self: center;
 `;
 
 const ElementHeader: React.FC<PropsElementHeader> = ({

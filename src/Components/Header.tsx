@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { rem } from "polished";
 import Hamburger from "./Header/Hamburger";
@@ -12,6 +12,7 @@ type PropsHeaderComponent = {
 const HeaderComponent = styled.header`
   display: flex;
   position: fixed;
+  z-index: 1;
   height: 100%;
   width: 100%;
   background-color: #263238;
@@ -44,16 +45,7 @@ const NavBar = styled.ul`
 `;
 
 const Header: React.FC = () => {
-  //  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isOpenNav, setIsOpenNav] = useState(false);
-
-  /*  useEffect(() => {
-    const resize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", resize);
-  }, []);*/
 
   return (
     <HeaderComponent navBar={isOpenNav}>

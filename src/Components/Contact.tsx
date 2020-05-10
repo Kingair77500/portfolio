@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ReactComponent as GithubSVG } from "../Images/Github.svg";
 import { ReactComponent as LinkedinSVG } from "../Images/Linkedin.svg";
 import { Link } from "react-scroll";
+import { HEADER_ITEMS } from "./utils/utils";
 
 const ContactContainer = styled.footer`
   padding: ${rem(40)} ${rem(40)};
@@ -54,15 +55,40 @@ const Linkedin = styled(LinkedinSVG)`
   margin-right: ${rem(10)};
 `;
 
+const LinkContainer = styled.p`
+  cursor: pointer;
+`;
+
+type PropsNavFooter = {
+  item: string;
+  index: number;
+};
+
+const NavFooter: React.FC<PropsNavFooter> = ({ item, index }) => {
+  return (
+    <LinkContainer>
+      <Link
+        activeClass="active"
+        to={item}
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={400}
+      >
+        {item}
+      </Link>
+    </LinkContainer>
+  );
+};
+
 const Contact = () => {
   return (
     <ContactContainer id="Contact">
       <ContactGeneral>
         <FooterNav>
-          <p>Qui je suis?</p>
-          <p>Compétences</p>
-          <p>Expériences</p>
-          <p>Projets</p>
+          {HEADER_ITEMS.map((item, index) => {
+            return <NavFooter item={item} index={index} />;
+          })}
         </FooterNav>
         <div>
           <ContactDirect>

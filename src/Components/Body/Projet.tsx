@@ -3,15 +3,17 @@ import { rem } from "polished";
 import styled from "styled-components";
 import SkillProjet from "./SkillProjet/SkillProjet";
 
-const ProjetComponent = styled.div``;
+const ProjetComponent = styled.div`
+  background: #f5f5f5;
+`;
 
 const ProjetContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 ${rem(40)};
 
-  @media (max-width: 500px) {
-    margin: 0 ${rem(10)};
+  @media (max-width: 650px) {
+    margin: 0;
   }
 `;
 
@@ -26,7 +28,7 @@ const AllProjetComponent = styled.div`
   flex-wrap: wrap;
   padding-bottom: ${rem(20)};
 
-  @media (max-width: 500px) {
+  @media (max-width: 650px) {
     flex-direction: column;
   }
 `;
@@ -34,35 +36,56 @@ const AllProjetComponent = styled.div`
 const ProjetElement = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 49%;
+  background: white;
+  padding-bottom: ${rem(15)};
 
   &:nth-child(1) {
-    margin-right: ${rem(0)};
+    margin-right: 1%;
   }
 
   &:nth-child(2) {
-    margin-left: ${rem(0)};
+    margin-left: 1%;
   }
 
   &:nth-child(3) {
-    margin-top: ${rem(15)};
+    margin-top: ${rem(20)};
+    margin-right: 1%;
   }
 
   &:nth-child(4) {
-    margin-top: ${rem(15)};
+    margin-top: ${rem(20)};
+    margin-left: 1%;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 650px) {
     width: inherit;
     margin-right: ${rem(0)};
     margin-left: ${rem(0)};
 
+    &:nth-child(1) {
+      margin-bottom: ${rem(15)};
+      margin-right: ${rem(0)};
+      padding-left: ${rem(10)};
+    }
+
+    &:nth-child(2) {
+      margin-bottom: ${rem(15)};
+      margin-left: ${rem(0)};
+      padding-left: ${rem(10)};
+    }
+
     &:nth-child(3) {
+      margin-bottom: ${rem(15)};
       margin-top: ${rem(0)};
+      margin-right: ${rem(0)};
+      padding-left: ${rem(10)};
     }
 
     &:nth-child(4) {
       margin-top: ${rem(0)};
+      margin-left: ${rem(0)};
+      padding-left: ${rem(10)};
     }
   }
 `;
@@ -71,7 +94,7 @@ const ElementComponent = styled.div`
   padding-right: ${rem(20)};
   padding-left: ${rem(20)};
 
-  @media (max-width: 500px) {
+  @media (max-width: 650px) {
     padding-right: ${rem(0)};
     padding-left: ${rem(0)};
   }

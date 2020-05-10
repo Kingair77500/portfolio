@@ -7,7 +7,7 @@ import Experience from "./Body/Experience";
 import Projet from "./Body/Projet";
 
 const BodyComponent = styled.div`
-  padding-top: ${rem(50)};
+  padding-top: ${rem(48)};
 `;
 
 const BodyInformation: React.FC = () => {

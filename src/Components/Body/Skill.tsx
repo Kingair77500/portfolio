@@ -2,20 +2,23 @@ import React, { useState, useEffect, useRef } from "react";
 import { rem } from "polished";
 import styled from "styled-components";
 import { MY_SKILL } from "../utils/utils";
+import SVGPolygone from "./SVGComponent/SvgPolygone";
 
 const SkillComponent = styled.div`
   display: flex;
   flex-direction: column;
+  background: #f5f5f5;
 `;
 
 const ListSkill = styled.ul`
   text-decoration: none;
   list-style-type: none;
   width: fit-content;
+  margin-bottom: ${rem(20)};
 
   @media (max-width: 500px) {
     padding: 0;
-    margin: auto;
+    margin: auto auto ${rem(25)} auto;
   }
 `;
 
@@ -183,6 +186,7 @@ const Skill = () => {
           );
         })}
       </ListSkill>
+      <SVGPolygone orientation="top" visibility={true} color="#f5f5f5" />
     </SkillComponent>
   );
 };

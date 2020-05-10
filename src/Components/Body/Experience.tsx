@@ -2,7 +2,9 @@ import React from "react";
 import { rem } from "polished";
 import styled from "styled-components";
 
-const ExperienceComponent = styled.div``;
+const ExperienceComponent = styled.div`
+  margin: ${rem(100)} 0 ${rem(20)} 0;
+`;
 
 const ExperienceASII = styled.div`
   display: flex;
